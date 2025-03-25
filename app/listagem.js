@@ -1,18 +1,37 @@
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, FlatList, Image, TextInput } from "react-native";
 import { useFornecedores } from "./contextoFornecedores";
 import { styles } from "../styles/styles";
+import { useState } from "react";
 
 export default function ListagemScreen() {
     const {fornecedores} = useFornecedores();
+    const [filtro, setFiltro] = useState('');
+
+    const fornecedoresFiltrados = fornecedores.filter(fornecedor =>
+        fornecedor.endereco.toLowerCase().includes(filtro.toLowerCase()) ||
+        fornecedor.categoria.toLowerCase().includes(filtro.toLowerCase())
+    );
+
     return(
         <View style={styles.container}>
             <Text style={styles.title}>Lista de Fornecedores</Text>
 
-            {fornecedores.length === 0 ? (
-                <Text style={styles.text}>Nenhum fornecedor cadastrado.</Text>
+            <View>
+                <Text>Buscar fornecedor</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Digite localização ou categoria"
+                    value={filtro}
+                    onChangeText={setFiltro}
+                />
+            </View>
+
+
+            {fornecedoresFiltrados.length === 0 ? (
+                <Text style={styles.text}>Nenhum fornecedor encontrado.</Text>
             ) : (
                 <FlatList
-                    data={fornecedores}
+                    data={fornecedoresFiltrados}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({item}) => (
                         <View>
