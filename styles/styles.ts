@@ -2,22 +2,27 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flexGrow: 1,
         padding: 30,
         backgroundColor: '#dff',
-        justifyContent: 'center',
         alignItems: 'center',
     },
     title: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
-        margin: 15,
+        margin: 25,
+    },
+    text: {
+        fontSize: 16,
     },
     input: {
-        borderWidth: 1,
+        height: 40,
+        width: 290,
+        borderWidth: 2,
+        backgroundColor: '#fff',
         borderColor: '#ccc',
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 10,
         marginBottom: 10,
     },
 })

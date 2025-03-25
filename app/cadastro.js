@@ -34,20 +34,26 @@ export default function CadastroScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Cadastro de Fornecedor</Text>
+
+            <Text style={styles.text}>Nome</Text>
             <TextInput style={styles.input}
-                placeholder="Nome" value={nome} onChangeText={setNome}
+                placeholder="João Silva Santos" value={nome} onChangeText={setNome}
             />
+            <Text style={styles.text}>Telefone</Text>
             <TextInput style={styles.input}
-                placeholder="Telefone" value={telefone} onChangeText={setTelefone}
+                placeholder="(11)93344-2211" value={telefone} onChangeText={setTelefone}
             />
+            <Text style={styles.text}>Endereço</Text>
             <TextInput style={styles.input}
-                placeholder="Endereço" value={endereco} onChangeText={setEndereco}
+                placeholder="Rua Braga Filho, 53" value={endereco} onChangeText={setEndereco}
             />
+            <Text style={styles.text}>Categoria</Text>
             <TextInput style={styles.input}
-                placeholder="Categoria" value={categoria} onChangeText={setCategoria}
+                placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
             />
+            <Text style={styles.text}>URL da imagem</Text>
             <TextInput style={styles.input}
-                placeholder="URL da imagem" value={imagemUrl} onChangeText={setImagemUrl}
+                placeholder="https://imagem.perfil" value={imagemUrl} onChangeText={setImagemUrl}
             />
             <Button title="Cadastrar" onPress={salvarFornecedor}/>
         </View>
