@@ -6,7 +6,7 @@ interface Fornecedor {
   telefone: string;
   endereco: string;
   categoria: string;
-  imagemUrl: string;
+  imagemUri: string;
 }
 
 interface FornecedoresContextType {

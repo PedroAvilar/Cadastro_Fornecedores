@@ -10,23 +10,23 @@ export default function CadastroScreen() {
     const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
     const [categoria, setCategoria] = useState('');
-    const [imagemUrl, setImagemUrl] = useState('');
+    const [imagemUri, setImagemUri] = useState('');
 
     const {adicionarFornecedor} = useFornecedores();
     const router = useRouter();
 
     const salvarFornecedor = () => {
-        if (!nome || !telefone || !endereco || !categoria || !imagemUrl) {
+        if (!nome || !telefone || !endereco || !categoria || !imagemUri) {
             return alert('Por favor, preencha todos os campos.');
         }
 
-        adicionarFornecedor({nome, telefone, endereco, categoria, imagemUrl});
+        adicionarFornecedor({nome, telefone, endereco, categoria, imagemUri});
 
         setNome('');
         setTelefone('');
         setEndereco('');
         setCategoria('');
-        setImagemUrl('');
+        setImagemUri('');
 
         router.push('/listagem');
     }
@@ -53,7 +53,7 @@ export default function CadastroScreen() {
             />
             <Text style={styles.text}>URL da imagem</Text>
             <TextInput style={styles.input}
-                placeholder="https://imagem.perfil" value={imagemUrl} onChangeText={setImagemUrl}
+                placeholder="https://imagem.perfil" value={imagemUri} onChangeText={setImagemUri}
             />
             <Button title="Cadastrar" onPress={salvarFornecedor}/>
         </View>
