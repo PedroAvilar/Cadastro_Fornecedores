@@ -25,4 +25,9 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 10,
     },
+    fotoPerfil: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+    }
 })

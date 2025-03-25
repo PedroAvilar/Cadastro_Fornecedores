@@ -16,7 +16,7 @@ export default function ListagemScreen() {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({item}) => (
                         <View>
-                            <Image source={{uri: item.imagemUri}}/>
+                            <Image source={{uri: item.imagemUri}} style={styles.fotoPerfil}/>
                             <View>
                                 <Text>{item.nome}</Text>
                                 <Text>📞 {item.telefone}</Text>
