@@ -12,6 +12,8 @@ interface Fornecedor {
 interface FornecedoresContextType {
   fornecedores: Fornecedor[];
   adicionarFornecedor: (novoFornecedor: Omit<Fornecedor, 'id'>) => void;
+  editarFornecedor: (id: number, dadosAtualizados: Omit<Fornecedor, 'id'>) => void;
+  excluirFornecedor: (id: number) => void;
 }
 
 const FornecedoresContext = createContext<FornecedoresContextType | undefined>(undefined);
@@ -24,10 +26,24 @@ export function FornecedoresProvider({ children }: { children: React.ReactNode }
 
     const fornecedorComId: Fornecedor = { id, ...novoFornecedor };
     setFornecedores((prev) => [...prev, fornecedorComId]);
-  };
+  }
+
+  const editarFornecedor = (id: number, dadosAtualizados: Omit<Fornecedor, 'id'>) => {
+    setFornecedores(prev =>
+      prev.map(fornecedor =>
+        fornecedor.id === id ? {...fornecedor, ...dadosAtualizados} : fornecedor
+      )
+    )
+  }
+
+  const excluirFornecedor = (id: number) => {
+    setFornecedores(prev =>
+      prev.filter(fornecedor => fornecedor.id !== id)
+    )
+  }
 
   return (
-    <FornecedoresContext.Provider value={{ fornecedores, adicionarFornecedor }}>
+    <FornecedoresContext.Provider value={{ fornecedores, adicionarFornecedor, editarFornecedor, excluirFornecedor }}>
       {children}
     </FornecedoresContext.Provider>
   );
