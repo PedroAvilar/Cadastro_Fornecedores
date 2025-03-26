@@ -22,9 +22,8 @@ export function FornecedoresProvider({ children }: { children: React.ReactNode }
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>([]);
 
   const adicionarFornecedor = (novoFornecedor: Omit<Fornecedor, 'id'>) => {
-    const id = fornecedores.length > 0 ? fornecedores[fornecedores.length - 1].id + 1 : 1;
-
-    const fornecedorComId: Fornecedor = { id, ...novoFornecedor };
+    const novoId = fornecedores.length > 0 ? Math.max(...fornecedores.map(f => f.id)) + 1 : 1;
+    const fornecedorComId: Fornecedor = {id: novoId, ...novoFornecedor};
     setFornecedores((prev) => [...prev, fornecedorComId]);
   }
 
