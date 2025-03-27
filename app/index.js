@@ -1,4 +1,4 @@
-import { View, Text, Button } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 import { styles } from "@/styles/styles";
 
@@ -7,7 +7,9 @@ export default function HomeSccreen() {
     return (
         <View style={styles.container}>
             <Text>Página Inicial</Text>
-            <Button title="Cadastro" onPress={() => router.push('/cadastro')}/>
+            <TouchableOpacity onPress={() => router.push('/cadastro')}>
+                <Text>Cadastrar Fornecedor</Text>
+            </TouchableOpacity>
         </View>
     )
 }
