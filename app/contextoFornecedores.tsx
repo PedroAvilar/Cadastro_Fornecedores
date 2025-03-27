@@ -18,7 +18,7 @@ interface FornecedoresContextType {
 
 const FornecedoresContext = createContext<FornecedoresContextType | undefined>(undefined);
 
-export function FornecedoresProvider({ children }: { children: React.ReactNode }) {
+export default function FornecedoresProvider({ children }: { children: React.ReactNode }) {
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>([]);
 
   const adicionarFornecedor = (novoFornecedor: Omit<Fornecedor, 'id'>) => {
