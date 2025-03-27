@@ -1,5 +1,5 @@
 import { styles } from "@/styles/styles";
-import { View, Text, Button, Image, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, Button, Image, TouchableOpacity, TextInput, ScrollView } from "react-native";
 import { useState } from "react";
 import { useFornecedores } from "./contextoFornecedores";
 import { useRouter } from 'expo-router';
@@ -32,36 +32,38 @@ export default function CadastroScreen() {
     }
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Cadastro de Fornecedor</Text>
+        <ScrollView style={styles.scrollContainer}>
+            <View style={styles.container}>
+                <Text style={styles.title}>Cadastro de fornecedor</Text>
 
-            <Text style={styles.text}>Nome</Text>
-            <TextInput style={styles.input}
-                placeholder="João Silva Santos" value={nome} onChangeText={setNome}
-            />
-            <Text style={styles.text}>Telefone</Text>
-            <TextInput style={styles.input}
-                placeholder="(11)93344-2211" value={telefone} onChangeText={setTelefone}
-            />
-            <Text style={styles.text}>Endereço</Text>
-            <TextInput style={styles.input}
-                placeholder="Rua Braga Filho, 53" value={endereco} onChangeText={setEndereco}
-            />
-            <Text style={styles.text}>Categoria</Text>
-            <TextInput style={styles.input}
-                placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
-            />
-            <Text style={styles.text}>Imagem</Text>
-            <TouchableOpacity onPress={() => selecionarImagem(setImagemUri)}>
-                {imagemUri ? (
-                    <Image source={{uri: imagemUri}}/>
-                ) : (
-                    <View>
-                        <Text>Selecionar imagem</Text>
-                    </View>
-                )}
-            </TouchableOpacity>
-            <Button title="Cadastrar" onPress={salvarFornecedor}/>
-        </View>
+                <Text style={styles.text}>Nome</Text>
+                <TextInput style={styles.input}
+                    placeholder="João Silva Santos" value={nome} onChangeText={setNome}
+                />
+                <Text style={styles.text}>Telefone</Text>
+                <TextInput style={styles.input}
+                    placeholder="(11)93344-2211" value={telefone} onChangeText={setTelefone}
+                />
+                <Text style={styles.text}>Endereço</Text>
+                <TextInput style={styles.input}
+                    placeholder="Rua Braga Filho, 53" value={endereco} onChangeText={setEndereco}
+                />
+                <Text style={styles.text}>Categoria</Text>
+                <TextInput style={styles.input}
+                    placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
+                />
+                <Text style={styles.text}>Imagem</Text>
+                <TouchableOpacity onPress={() => selecionarImagem(setImagemUri)}>
+                    {imagemUri ? (
+                        <Image source={{uri: imagemUri}}/>
+                    ) : (
+                        <View>
+                            <Text>Selecionar imagem</Text>
+                        </View>
+                    )}
+                </TouchableOpacity>
+                <Button title="Cadastrar" onPress={salvarFornecedor}/>
+            </View>
+        </ScrollView>
     )
 }
