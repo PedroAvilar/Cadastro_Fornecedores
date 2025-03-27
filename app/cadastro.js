@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useFornecedores } from "./contextoFornecedores";
 import { TextInput } from "react-native-gesture-handler";
 import { useRouter } from 'expo-router';
-import * as ImagePicker from 'expo-image-picker';
+import { selecionarImagem } from '@/utils/selecaoImagem';
 
 export default function CadastroScreen() {
     const [nome, setNome] = useState('');
@@ -15,23 +15,6 @@ export default function CadastroScreen() {
 
     const {adicionarFornecedor} = useFornecedores();
     const router = useRouter();
-
-    const selecionarImagem = async () => {
-        const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (status !== 'granted') {
-            alert('Necessário permissão para acessar a galeria.');
-            return;
-        }
-        const result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ['image'],
-            allowsEditing: true,
-            aspect: [4, 4],
-            quality: 1,
-        })
-        if (!result.canceled) {
-            setImagemUri(result.assets[0].uri || '')
-        }
-    }
 
     const salvarFornecedor = () => {
         if (!nome || !telefone || !endereco || !categoria) {
@@ -70,7 +53,7 @@ export default function CadastroScreen() {
                 placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
             />
             <Text style={styles.text}>Imagem</Text>
-            <TouchableOpacity onPress={selecionarImagem}>
+            <TouchableOpacity onPress={() => selecionarImagem(setImagemUri)}>
                 {imagemUri ? (
                     <Image source={{uri: imagemUri}}/>
                 ) : (
