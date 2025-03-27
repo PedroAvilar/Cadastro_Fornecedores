@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TextInput, Alert, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, Image, TextInput, Alert, TouchableOpacity, Platform } from "react-native";
 import { useFornecedores } from "./contextoFornecedores";
 import { styles } from "../styles/styles";
 import { useState } from "react";
@@ -15,14 +15,21 @@ export default function ListagemScreen() {
     )
 
     const confirmarExclusao = (id) => {
-        Alert.alert(
-            "Excluir Fornecedor",
-            "Tem certeza que deseja excluir?",
-            [
-                {text: "Cancelar", style: 'cancel'},
-                {text: "Excluir", onPress: () => excluirFornecedor(id), style: 'destructive'}
-            ]
-        )
+        if (Platform.OS === 'web') {
+            const confirmacao = window.confirm("Tem certeza que deseja excluir?");
+            if (confirmacao) {
+                excluirFornecedor(id);
+            }
+        } else {
+            Alert.alert(
+                "Excluir Fornecedor",
+                "Tem certeza que deseja excluir?",
+                [
+                    {text: "Cancelar", style: 'cancel'},
+                    {text: "Excluir", onPress: () => excluirFornecedor(id), style: 'destructive'}
+                ]
+            )
+        }
     }
 
     return(
