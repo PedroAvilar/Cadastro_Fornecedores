@@ -8,7 +8,7 @@ export async function selecionarImagem(setImagemUri) {
         return;
     }
     const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ['image'],
+        mediaTypes: ImagePicker.Images,
         allowsEditing: true,
         aspect: [4, 4],
         quality: 1,
