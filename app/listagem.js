@@ -9,10 +9,12 @@ export default function ListagemScreen() {
     const [filtro, setFiltro] = useState('');
     const router = useRouter();
 
-    const fornecedoresFiltrados = fornecedores.filter(fornecedor =>
+    const fornecedoresFiltrados = fornecedores.filter(fornecedor => (
+        fornecedor.nome.toLocaleLowerCase().includes(filtro.toLocaleLowerCase()) ||
+        fornecedor.telefone.toLocaleLowerCase().includes(filtro.toLocaleLowerCase()) ||
         fornecedor.endereco.toLowerCase().includes(filtro.toLowerCase()) ||
         fornecedor.categoria.toLowerCase().includes(filtro.toLowerCase())
-    )
+    ))
 
     const confirmarExclusao = (id) => {
         if (Platform.OS === 'web') {
@@ -34,13 +36,13 @@ export default function ListagemScreen() {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Lista de Fornecedores</Text>
+            <Text style={styles.title}>Lista de fornecedores</Text>
 
             <View>
                 <Text>Buscar fornecedor</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite localização ou categoria"
+                    placeholder="Nome, telefone, categoria ou localização"
                     value={filtro}
                     onChangeText={setFiltro}
                 />
