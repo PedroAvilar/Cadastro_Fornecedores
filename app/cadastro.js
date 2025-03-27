@@ -1,8 +1,7 @@
 import { styles } from "@/styles/styles";
-import { View, Text, Button, Image, TouchableOpacity } from "react-native";
+import { View, Text, Button, Image, TouchableOpacity, TextInput } from "react-native";
 import { useState } from "react";
 import { useFornecedores } from "./contextoFornecedores";
-import { TextInput } from "react-native-gesture-handler";
 import { useRouter } from 'expo-router';
 import { selecionarImagem } from '@/utils/selecaoImagem';
 
