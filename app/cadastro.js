@@ -62,7 +62,9 @@ export default function CadastroScreen() {
                         </View>
                     )}
                 </TouchableOpacity>
-                <Button title="Cadastrar" onPress={salvarFornecedor}/>
+                <TouchableOpacity onPress={salvarFornecedor}>
+                    <Text>Cadastrar</Text>
+                </TouchableOpacity>
             </View>
         </ScrollView>
     )

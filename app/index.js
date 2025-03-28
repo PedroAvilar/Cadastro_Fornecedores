@@ -39,6 +39,10 @@ export default function ListagemScreen() {
             <View style={styles.container}>
                 <Text style={styles.title}>Lista de fornecedores</Text>
 
+                <TouchableOpacity onPress={() => router.push('/cadastro')}>
+                    <Text>Cadastrar novo</Text>
+                </TouchableOpacity>
+
                 <View>
                     <Text>Buscar fornecedor</Text>
                     <TextInput
