@@ -39,12 +39,12 @@ export default function ListagemScreen() {
             <View style={styles.container}>
                 <Text style={styles.title}>Lista de fornecedores</Text>
 
-                <TouchableOpacity onPress={() => router.push('/cadastro')}>
-                    <Text>Cadastrar novo</Text>
+                <TouchableOpacity style={styles.button} onPress={() => router.push('/cadastro')}>
+                        <Text style={styles.buttonText}>Cadastrar novo</Text>
                 </TouchableOpacity>
 
                 <View>
-                    <Text>Buscar fornecedor</Text>
+                    <Text style={styles.text}>Buscar fornecedor</Text>
                     <TextInput
                         style={styles.input}
                         placeholder="Nome, telefone, categoria ou localização"
@@ -55,13 +55,13 @@ export default function ListagemScreen() {
 
 
                 {fornecedoresFiltrados.length === 0 ? (
-                    <Text style={styles.text}>Nenhum fornecedor encontrado.</Text>
+                    <Text style={[styles.text, {padding: 30}]}>Nenhum fornecedor encontrado.</Text>
                 ) : (
                     <FlatList
                         data={fornecedoresFiltrados}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({item}) => (
-                            <View>
+                            <View style={styles.container}>
                                 <Image source={{uri: item.imagemUri}} style={styles.fotoPerfil}/>
                                 <View>
                                     <Text>{item.nome}</Text>
@@ -69,14 +69,14 @@ export default function ListagemScreen() {
                                     <Text>📍 {item.endereco}</Text>
                                     <Text>📦 {item.categoria}</Text>
                                 </View>
-                                <View>
-                                    <TouchableOpacity onPress={() =>
+                                <View style={styles.containerButton}>
+                                    <TouchableOpacity style={[styles.button, {backgroundColor: '#35f', width: 100}]} onPress={() =>
                                         router.push(`/editar?id=${item.id}`)}>
-                                            <Text>✏️ Editar</Text>
+                                            <Text style={styles.buttonText}>Editar</Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={() =>
+                                    <TouchableOpacity style={[styles.button, {backgroundColor: '#f33', width: 100}]} onPress={() =>
                                         confirmarExclusao(item.id)}>
-                                            <Text>❌ Excluir</Text>
+                                            <Text style={styles.buttonText}>Excluir</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

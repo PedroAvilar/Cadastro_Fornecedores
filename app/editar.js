@@ -35,13 +35,23 @@ export default function EditarScreen() {
 
         editarFornecedor(fornecedor.id, {nome, telefone, endereco, categoria, imagemUri});
 
-        router.push('/index');
+        router.push('/');
     }
     return (
         <ScrollView style={styles.scrollContainer}>
             <View style={styles.container}>
+
                 <Text style={styles.title}>Editar Fornecedor</Text>
-                
+
+                <Text style={styles.text}>Imagem</Text>
+                {imagemUri ? 
+                    <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
+                <TouchableOpacity style={[styles.button, {backgroundColor: '#888'}]} onPress={() =>
+                    selecionarImagem(setImagemUri)}>
+                        <View>
+                            <Text style={styles.buttonText}>Nova imagem</Text>
+                        </View>
+                </TouchableOpacity>                
                 <Text style={styles.text}>Nome</Text>
                 <TextInput style={styles.input} value={nome} onChangeText={setNome}
                 />
@@ -54,16 +64,9 @@ export default function EditarScreen() {
                 <Text style={styles.text}>Categoria</Text>
                 <TextInput style={styles.input} value={categoria} onChangeText={setCategoria}
                 />
-                <Text style={styles.text}>Imagem</Text>
-                {imagemUri ? 
-                    <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
-                <TouchableOpacity onPress={() =>
-                    selecionarImagem(setImagemUri)}>
-                        <View>
-                            <Text>Selecionar imagem</Text>
-                        </View>
+                <TouchableOpacity style={[styles.button, {backgroundColor: '#35f'}]} onPress={salvarEdicao}>
+                    <Text style={styles.buttonText}>Salvar</Text>
                 </TouchableOpacity>
-                <Button title="Salvar" onPress={salvarEdicao}/>
             </View>
         </ScrollView>
     )

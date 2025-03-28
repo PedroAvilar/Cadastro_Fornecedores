@@ -28,7 +28,7 @@ export default function CadastroScreen() {
         setCategoria('');
         setImagemUri('');
 
-        router.push('/index');
+        router.push('/');
     }
 
     return (
@@ -36,6 +36,15 @@ export default function CadastroScreen() {
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastro de fornecedor</Text>
 
+                <Text style={styles.text}>Imagem</Text>
+                {imagemUri ? 
+                    <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
+                <TouchableOpacity style={[styles.button, {backgroundColor: '#888'}]} onPress={() =>
+                    selecionarImagem(setImagemUri)}>
+                        <View>
+                            <Text style={styles.buttonText}>Nova imagem</Text>
+                        </View>
+                </TouchableOpacity>
                 <Text style={styles.text}>Nome</Text>
                 <TextInput style={styles.input}
                     placeholder="João Silva Santos" value={nome} onChangeText={setNome}
@@ -52,18 +61,8 @@ export default function CadastroScreen() {
                 <TextInput style={styles.input}
                     placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
                 />
-                <Text style={styles.text}>Imagem</Text>
-                <TouchableOpacity onPress={() => selecionarImagem(setImagemUri)}>
-                    {imagemUri ? (
-                        <Image source={{uri: imagemUri}}/>
-                    ) : (
-                        <View>
-                            <Text>Selecionar imagem</Text>
-                        </View>
-                    )}
-                </TouchableOpacity>
-                <TouchableOpacity onPress={salvarFornecedor}>
-                    <Text>Cadastrar</Text>
+                <TouchableOpacity style={[styles.button, {backgroundColor: '#35f'}]} onPress={salvarFornecedor}>
+                    <Text style={styles.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>

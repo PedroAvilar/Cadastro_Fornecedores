@@ -11,6 +11,10 @@ export const styles = StyleSheet.create({
         padding: 30,
         alignItems: 'center',
     },
+    containerButton: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
     title: {
         fontSize: 25,
         fontWeight: 'bold',
@@ -30,8 +34,30 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
     },
     fotoPerfil: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
+        margin: 10,
+        width: 200,
+        height: 200,
+        borderRadius: 100,
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    button: {
+        width: 190,
+        height: 40,
+        backgroundColor: '#4caf4c',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+        elevation: 3,
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 4},
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
     }
 })
