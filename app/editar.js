@@ -35,7 +35,7 @@ export default function EditarScreen() {
 
         editarFornecedor(fornecedor.id, {nome, telefone, endereco, categoria, imagemUri});
 
-        router.push('/listagem');
+        router.push('/index');
     }
     return (
         <ScrollView style={styles.scrollContainer}>

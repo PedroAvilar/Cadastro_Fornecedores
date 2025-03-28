@@ -28,7 +28,7 @@ export default function CadastroScreen() {
         setCategoria('');
         setImagemUri('');
 
-        router.push('/listagem');
+        router.push('/index');
     }
 
     return (
