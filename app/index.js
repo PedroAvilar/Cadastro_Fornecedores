@@ -58,17 +58,17 @@ export default function ListagemScreen() {
                     <Text style={[styles.text, {padding: 30}]}>Nenhum fornecedor encontrado.</Text>
                 ) : (
                     <FlatList
-                        style={{flex: 1}}
+                        style={{width: '100%'}}
                         data={fornecedoresFiltrados}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({item}) => (
                             <View style={styles.container}>
                                 <Image source={{uri: item.imagemUri}} style={styles.fotoPerfil}/>
                                 <View>
-                                    <Text>{item.nome}</Text>
-                                    <Text>📞 {item.telefone}</Text>
-                                    <Text>📍 {item.endereco}</Text>
-                                    <Text>📦 {item.categoria}</Text>
+                                    <Text style={[styles.text, {fontWeight: '500'}]}>{item.nome}</Text>
+                                    <Text style={styles.text}>📞 {item.telefone}</Text>
+                                    <Text style={styles.text}>📍 {item.endereco}</Text>
+                                    <Text style={styles.text}>📦 {item.categoria}</Text>
                                 </View>
                                 <View style={styles.containerButton}>
                                     <TouchableOpacity style={[styles.button, {backgroundColor: '#35f', width: 100}]} onPress={() =>

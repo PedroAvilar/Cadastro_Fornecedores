@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
     },
     text: {
         fontSize: 16,
+        paddingHorizontal: 15,
     },
     input: {
         height: 40,
