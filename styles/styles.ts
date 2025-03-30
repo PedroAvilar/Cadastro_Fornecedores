@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     scrollContainer: {
+        paddingTop: 30,
         flex: 1,
         backgroundColor: '#dff',
     },
