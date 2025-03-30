@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TextInput, Alert, TouchableOpacity, Platform, ScrollView } from "react-native";
+import { View, Text, FlatList, Image, TextInput, Alert, TouchableOpacity, Platform } from "react-native";
 import { useFornecedores } from "./contextoFornecedores";
 import { styles } from "../styles/styles";
 import { useState } from "react";
@@ -40,11 +40,11 @@ export default function ListagemScreen() {
                 <Text style={styles.title}>Lista de fornecedores</Text>
 
                 <TouchableOpacity style={styles.button} onPress={() => router.push('/cadastro')}>
-                        <Text style={styles.buttonText}>Cadastrar novo</Text>
+                        <Text style={styles.buttonText}>Adicionar</Text>
                 </TouchableOpacity>
 
                 <View>
-                    <Text style={styles.text}>Buscar fornecedor</Text>
+                    <Text style={styles.text}>Buscar</Text>
                     <TextInput
                         style={styles.input}
                         placeholder="Nome, telefone, categoria ou localização"

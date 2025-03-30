@@ -1,5 +1,5 @@
 import { styles } from "@/styles/styles";
-import { View, Text, Button, Image, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from "react-native";
 import { useState } from "react";
 import { useFornecedores } from "./contextoFornecedores";
 import { useRouter } from 'expo-router';
@@ -42,7 +42,7 @@ export default function CadastroScreen() {
                 <TouchableOpacity style={[styles.button, {backgroundColor: '#888'}]} onPress={() =>
                     selecionarImagem(setImagemUri)}>
                         <View>
-                            <Text style={styles.buttonText}>Nova imagem</Text>
+                            <Text style={styles.buttonText}>Adicionar</Text>
                         </View>
                 </TouchableOpacity>
                 <Text style={styles.text}>Nome</Text>

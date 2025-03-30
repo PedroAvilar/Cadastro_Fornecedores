@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Image, TouchableOpacity, Button, ScrollView } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
 import { useFornecedores } from './contextoFornecedores';
 import { useRouter, useLocalSearchParams } from "expo-router";
@@ -49,7 +49,7 @@ export default function EditarScreen() {
                 <TouchableOpacity style={[styles.button, {backgroundColor: '#888'}]} onPress={() =>
                     selecionarImagem(setImagemUri)}>
                         <View>
-                            <Text style={styles.buttonText}>Nova imagem</Text>
+                            <Text style={styles.buttonText}>Adicionar</Text>
                         </View>
                 </TouchableOpacity>                
                 <Text style={styles.text}>Nome</Text>
