@@ -2,18 +2,17 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     scrollContainer: {
-        flexGrow: 1,
-        paddingBottom: 20,
+        flex: 1,
         backgroundColor: '#dff',
     },
     container: {
-        flexGrow: 1,
-        padding: 30,
+        flex: 1,
         alignItems: 'center',
     },
     containerButton: {
         flexDirection: 'row',
         justifyContent: 'center',
+        marginBottom: 30,
     },
     title: {
         fontSize: 25,

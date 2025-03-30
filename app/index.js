@@ -35,7 +35,7 @@ export default function ListagemScreen() {
     }
 
     return(
-        <ScrollView style={styles.scrollContainer}>
+        <View style={styles.scrollContainer}>
             <View style={styles.container}>
                 <Text style={styles.title}>Lista de fornecedores</Text>
 
@@ -58,6 +58,7 @@ export default function ListagemScreen() {
                     <Text style={[styles.text, {padding: 30}]}>Nenhum fornecedor encontrado.</Text>
                 ) : (
                     <FlatList
+                        style={{flex: 1}}
                         data={fornecedoresFiltrados}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({item}) => (
@@ -84,6 +85,6 @@ export default function ListagemScreen() {
                     />
                 )}
             </View>
-        </ScrollView>
+        </View>
     )
 }
