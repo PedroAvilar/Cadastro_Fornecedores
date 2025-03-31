@@ -32,7 +32,7 @@ export default function CadastroScreen() {
     }
 
     return (
-        <ScrollView style={styles.scrollContainer}>
+        <ScrollView style={styles.containerScroll}>
             <View style={styles.container}>
 
                 <View style={styles.containerButtonBack}>

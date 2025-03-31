@@ -35,7 +35,7 @@ export default function ListagemScreen() {
     }
 
     return(
-        <View style={styles.scrollContainer}>
+        <View style={styles.containerScroll}>
             <View style={styles.container}>
                 <Text style={styles.title}>Lista de fornecedores</Text>
 

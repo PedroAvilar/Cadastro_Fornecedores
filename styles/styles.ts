@@ -1,14 +1,15 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    scrollContainer: {
-        paddingTop: 30,
+    containerScroll: {
         flex: 1,
         backgroundColor: '#ede',
     },
     container: {
         flex: 1,
         alignItems: 'center',
+        paddingTop: 30,
+        paddingBottom: 30,
     },
     containerButtonEdit: {
         flexDirection: 'row',
