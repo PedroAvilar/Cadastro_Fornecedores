@@ -9,14 +9,13 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         paddingTop: 30,
-        paddingBottom: 30,
     },
-    containerButtonEdit: {
+    containerBotaoEditar: {
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: 30,
     },
-    containerButtonBack: {
+    containerBotaoBack: {
         alignSelf: 'flex-start',
         marginLeft: 10,
     },
@@ -29,6 +28,11 @@ export const styles = StyleSheet.create({
     text: {
         fontSize: 16,
         color: '#000',
+    },
+    textNome: {
+        fontSize: 18,
+        color: '#000',
+        fontWeight: '500',
     },
     input: {
         height: 40,
@@ -46,12 +50,12 @@ export const styles = StyleSheet.create({
         height: 200,
         borderRadius: 100,
     },
-    buttonText: {
+    textBotao: {
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
     },
-    buttonBase: {
+    botaoBase: {
         height: 40,
         paddingVertical: 10,
         paddingHorizontal: 20,
@@ -65,19 +69,20 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 6,
     },
-    buttonPrimary: {
+    botaoPrimario: {
         width: 190,
         backgroundColor: '#3a3',
+        marginBottom: 30,
     },
-    buttonBack: {
+    botaoVoltar: {
         backgroundColor: '#888',
         width: 100,
     },
-    buttonEdit: {
+    botaoEditar: {
         backgroundColor: '#35f',
         width: 100,
     },
-    buttonDel: {
+    botaoExcluir: {
         backgroundColor: '#f33',
         width: 100,
     },

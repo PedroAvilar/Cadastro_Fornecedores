@@ -35,11 +35,11 @@ export default function CadastroScreen() {
         <ScrollView style={styles.containerScroll}>
             <View style={styles.container}>
 
-                <View style={styles.containerButtonBack}>
+                <View style={styles.containerBotaoBack}>
                     <TouchableOpacity 
-                        style={[styles.buttonBase, styles.buttonBack]}
+                        style={[styles.botaoBase, styles.botaoVoltar]}
                         onPress={() => router.push('/')}>
-                            <Text style={styles.buttonText}>Voltar</Text>
+                            <Text style={styles.textBotao}>Voltar</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -49,9 +49,9 @@ export default function CadastroScreen() {
                 {imagemUri ? 
                     <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
                 <TouchableOpacity
-                    style={[styles.buttonBase, styles.buttonEdit]}
+                    style={[styles.botaoBase, styles.botaoEditar]}
                     onPress={() => selecionarImagem(setImagemUri)}>
-                            <Text style={styles.buttonText}>Nova</Text>
+                            <Text style={styles.textBotao}>Nova</Text>
                 </TouchableOpacity>
                 <Text style={styles.text}>Nome</Text>
                 <TextInput style={styles.input}
@@ -70,9 +70,9 @@ export default function CadastroScreen() {
                     placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
                 />
                 <TouchableOpacity
-                    style={[styles.buttonBase, styles.buttonPrimary]}
+                    style={[styles.botaoBase, styles.botaoPrimario]}
                     onPress={salvarFornecedor}>
-                        <Text style={styles.buttonText}>Cadastrar</Text>
+                        <Text style={styles.textBotao}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>

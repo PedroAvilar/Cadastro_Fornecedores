@@ -40,9 +40,9 @@ export default function ListagemScreen() {
                 <Text style={styles.title}>Lista de fornecedores</Text>
 
                 <TouchableOpacity
-                    style={[styles.buttonBase, styles.buttonPrimary]}
+                    style={[styles.botaoBase, styles.botaoPrimario]}
                     onPress={() => router.push('/cadastro')}>
-                        <Text style={styles.buttonText}>Adicionar</Text>
+                        <Text style={styles.textBotao}>Adicionar</Text>
                 </TouchableOpacity>
 
                 <View>
@@ -67,21 +67,21 @@ export default function ListagemScreen() {
                             <View style={styles.container}>
                                 <Image source={{uri: item.imagemUri}} style={styles.fotoPerfil}/>
                                 <View>
-                                    <Text style={[styles.text, {fontWeight: '500'}]}>{item.nome}</Text>
+                                    <Text style={styles.textNome}>👤 {item.nome}</Text>
                                     <Text style={styles.text}>📞 {item.telefone}</Text>
                                     <Text style={styles.text}>📍 {item.endereco}</Text>
                                     <Text style={styles.text}>📦 {item.categoria}</Text>
                                 </View>
-                                <View style={styles.containerButtonEdit}>
+                                <View style={styles.containerBotaoEditar}>
                                     <TouchableOpacity 
-                                        style={[styles.buttonBase, styles.buttonEdit]}
+                                        style={[styles.botaoBase, styles.botaoEditar]}
                                         onPress={() => router.push(`/editar?id=${item.id}`)}>
-                                            <Text style={styles.buttonText}>Editar</Text>
+                                            <Text style={styles.textBotao}>Editar</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity
-                                        style={[styles.buttonBase, styles.buttonDel]}
+                                        style={[styles.botaoBase, styles.botaoExcluir]}
                                         onPress={() => confirmarExclusao(item.id)}>
-                                            <Text style={styles.buttonText}>Excluir</Text>
+                                            <Text style={styles.textBotao}>Excluir</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
