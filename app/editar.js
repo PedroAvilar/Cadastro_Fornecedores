@@ -41,16 +41,23 @@ export default function EditarScreen() {
         <ScrollView style={styles.scrollContainer}>
             <View style={styles.container}>
 
-                <Text style={styles.title}>Editar Fornecedor</Text>
+            <View style={styles.containerButtonBack}>
+                    <TouchableOpacity 
+                        style={[styles.buttonBase, styles.buttonBack]}
+                        onPress={() => router.push('/')}>
+                            <Text style={styles.buttonText}>Voltar</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <Text style={styles.title}>Editar fornecedor</Text>
 
                 <Text style={styles.text}>Imagem</Text>
                 {imagemUri ? 
                     <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
-                <TouchableOpacity style={[styles.button, {backgroundColor: '#888'}]} onPress={() =>
-                    selecionarImagem(setImagemUri)}>
-                        <View>
-                            <Text style={styles.buttonText}>Adicionar</Text>
-                        </View>
+                <TouchableOpacity
+                    style={[styles.buttonBase, styles.buttonEdit]}
+                    onPress={() => selecionarImagem(setImagemUri)}>
+                            <Text style={styles.buttonText}>Nova</Text>
                 </TouchableOpacity>                
                 <Text style={styles.text}>Nome</Text>
                 <TextInput style={styles.input} value={nome} onChangeText={setNome}
@@ -64,8 +71,10 @@ export default function EditarScreen() {
                 <Text style={styles.text}>Categoria</Text>
                 <TextInput style={styles.input} value={categoria} onChangeText={setCategoria}
                 />
-                <TouchableOpacity style={[styles.button, {backgroundColor: '#35f'}]} onPress={salvarEdicao}>
-                    <Text style={styles.buttonText}>Salvar</Text>
+                <TouchableOpacity
+                    style={[styles.buttonBase, styles.buttonPrimary]}
+                    onPress={salvarEdicao}>
+                        <Text style={styles.buttonText}>Salvar</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>

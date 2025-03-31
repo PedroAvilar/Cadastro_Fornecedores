@@ -39,7 +39,9 @@ export default function ListagemScreen() {
             <View style={styles.container}>
                 <Text style={styles.title}>Lista de fornecedores</Text>
 
-                <TouchableOpacity style={styles.button} onPress={() => router.push('/cadastro')}>
+                <TouchableOpacity
+                    style={[styles.buttonBase, styles.buttonPrimary]}
+                    onPress={() => router.push('/cadastro')}>
                         <Text style={styles.buttonText}>Adicionar</Text>
                 </TouchableOpacity>
 
@@ -70,13 +72,15 @@ export default function ListagemScreen() {
                                     <Text style={styles.text}>📍 {item.endereco}</Text>
                                     <Text style={styles.text}>📦 {item.categoria}</Text>
                                 </View>
-                                <View style={styles.containerButton}>
-                                    <TouchableOpacity style={[styles.button, {backgroundColor: '#35f', width: 100}]} onPress={() =>
-                                        router.push(`/editar?id=${item.id}`)}>
+                                <View style={styles.containerButtonEdit}>
+                                    <TouchableOpacity 
+                                        style={[styles.buttonBase, styles.buttonEdit]}
+                                        onPress={() => router.push(`/editar?id=${item.id}`)}>
                                             <Text style={styles.buttonText}>Editar</Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity style={[styles.button, {backgroundColor: '#f33', width: 100}]} onPress={() =>
-                                        confirmarExclusao(item.id)}>
+                                    <TouchableOpacity
+                                        style={[styles.buttonBase, styles.buttonDel]}
+                                        onPress={() => confirmarExclusao(item.id)}>
                                             <Text style={styles.buttonText}>Excluir</Text>
                                     </TouchableOpacity>
                                 </View>

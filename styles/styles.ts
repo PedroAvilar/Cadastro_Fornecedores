@@ -4,25 +4,30 @@ export const styles = StyleSheet.create({
     scrollContainer: {
         paddingTop: 30,
         flex: 1,
-        backgroundColor: '#dff',
+        backgroundColor: '#ede',
     },
     container: {
         flex: 1,
         alignItems: 'center',
     },
-    containerButton: {
+    containerButtonEdit: {
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: 30,
+    },
+    containerButtonBack: {
+        alignSelf: 'flex-start',
+        marginLeft: 10,
     },
     title: {
         fontSize: 25,
         fontWeight: 'bold',
         margin: 25,
+        color: '#000',
     },
     text: {
         fontSize: 16,
-        paddingHorizontal: 15,
+        color: '#000',
     },
     input: {
         height: 40,
@@ -45,10 +50,8 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
-    button: {
-        width: 190,
+    buttonBase: {
         height: 40,
-        backgroundColor: '#4caf4c',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 10,
@@ -60,5 +63,22 @@ export const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 4},
         shadowOpacity: 0.1,
         shadowRadius: 6,
-    }
+    },
+    buttonPrimary: {
+        width: 190,
+        backgroundColor: '#3a3',
+    },
+    buttonBack: {
+        backgroundColor: '#888',
+        width: 100,
+    },
+    buttonEdit: {
+        backgroundColor: '#35f',
+        width: 100,
+    },
+    buttonDel: {
+        backgroundColor: '#f33',
+        width: 100,
+    },
+
 })

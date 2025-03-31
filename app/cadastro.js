@@ -34,16 +34,24 @@ export default function CadastroScreen() {
     return (
         <ScrollView style={styles.scrollContainer}>
             <View style={styles.container}>
+
+                <View style={styles.containerButtonBack}>
+                    <TouchableOpacity 
+                        style={[styles.buttonBase, styles.buttonBack]}
+                        onPress={() => router.push('/')}>
+                            <Text style={styles.buttonText}>Voltar</Text>
+                    </TouchableOpacity>
+                </View>
+
                 <Text style={styles.title}>Cadastro de fornecedor</Text>
 
                 <Text style={styles.text}>Imagem</Text>
                 {imagemUri ? 
                     <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
-                <TouchableOpacity style={[styles.button, {backgroundColor: '#888'}]} onPress={() =>
-                    selecionarImagem(setImagemUri)}>
-                        <View>
-                            <Text style={styles.buttonText}>Adicionar</Text>
-                        </View>
+                <TouchableOpacity
+                    style={[styles.buttonBase, styles.buttonEdit]}
+                    onPress={() => selecionarImagem(setImagemUri)}>
+                            <Text style={styles.buttonText}>Nova</Text>
                 </TouchableOpacity>
                 <Text style={styles.text}>Nome</Text>
                 <TextInput style={styles.input}
@@ -61,8 +69,10 @@ export default function CadastroScreen() {
                 <TextInput style={styles.input}
                     placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
                 />
-                <TouchableOpacity style={[styles.button, {backgroundColor: '#35f'}]} onPress={salvarFornecedor}>
-                    <Text style={styles.buttonText}>Cadastrar</Text>
+                <TouchableOpacity
+                    style={[styles.buttonBase, styles.buttonPrimary]}
+                    onPress={salvarFornecedor}>
+                        <Text style={styles.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
