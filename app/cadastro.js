@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useFornecedores } from "./contextoFornecedores";
 import { useRouter } from 'expo-router';
 import { selecionarImagem } from '@/utils/selecaoImagem';
+import { formatarTelefone } from '@/utils/formatarTelefone';
 
 export default function CadastroScreen() {
     const [nome, setNome] = useState('');
@@ -59,7 +60,7 @@ export default function CadastroScreen() {
                 />
                 <Text style={styles.text}>Telefone</Text>
                 <TextInput style={styles.input}
-                    placeholder="(11)94433-2211" value={telefone} onChangeText={setTelefone}
+                    placeholder="(11)94433-2211" value={telefone} onChangeText={(texto) => setTelefone(formatarTelefone(texto))} keyboardType="numeric"
                 />
                 <Text style={styles.text}>Endereço</Text>
                 <TextInput style={styles.input}

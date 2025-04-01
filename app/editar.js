@@ -2,8 +2,9 @@ import { View, Text, TextInput, Image, TouchableOpacity, ScrollView } from "reac
 import { useState, useEffect } from "react";
 import { useFornecedores } from './contextoFornecedores';
 import { useRouter, useLocalSearchParams } from "expo-router";
-import { styles } from '../styles/styles';
-import { selecionarImagem } from '../utils/selecaoImagem';
+import { styles } from '@/styles/styles';
+import { selecionarImagem } from '@/utils/selecaoImagem';
+import { formatarTelefone } from '@/utils/formatarTelefone';
 
 export default function EditarScreen() {
     const {fornecedores, editarFornecedor} = useFornecedores();
@@ -63,7 +64,7 @@ export default function EditarScreen() {
                 <TextInput style={styles.input} value={nome} onChangeText={setNome}
                 />
                 <Text style={styles.text}>Telefone</Text>
-                <TextInput style={styles.input} value={telefone} onChangeText={setTelefone}
+                <TextInput style={styles.input} value={telefone} onChangeText={(texto) => setTelefone(formatarTelefone(texto))} keyboardType="numeric"
                 />
                 <Text style={styles.text}>Endereço</Text>
                 <TextInput style={styles.input} value={endereco} onChangeText={setEndereco}
