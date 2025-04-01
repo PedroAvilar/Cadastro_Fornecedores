@@ -1,6 +1,5 @@
 import * as ImagePicker from 'expo-image-picker';
 
-
 export async function selecionarImagem(setImagemUri) {
     const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (status !== 'granted') {

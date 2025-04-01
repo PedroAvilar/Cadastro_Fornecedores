@@ -1,6 +1,6 @@
 import { View, Text, TextInput, Image, TouchableOpacity, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
-import { useFornecedores } from './contextoFornecedores';
+import { useFornecedores } from './contexto/contextoFornecedores';
 import { useRouter, useLocalSearchParams } from "expo-router";
 import { styles } from '@/styles/styles';
 import { selecionarImagem } from '@/utils/selecaoImagem';

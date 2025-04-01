@@ -1,7 +1,7 @@
 import { styles } from "@/styles/styles";
 import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from "react-native";
 import { useState } from "react";
-import { useFornecedores } from "./contextoFornecedores";
+import { useFornecedores } from "./contexto/contextoFornecedores";
 import { useRouter } from 'expo-router';
 import { selecionarImagem } from '@/utils/selecaoImagem';
 import { formatarTelefone } from '@/utils/formatarTelefone';
