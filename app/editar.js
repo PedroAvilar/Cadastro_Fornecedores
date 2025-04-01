@@ -41,7 +41,7 @@ export default function EditarScreen() {
         <ScrollView style={styles.containerScroll}>
             <View style={styles.container}>
 
-            <View style={styles.containerBotaoBack}>
+                <View style={styles.containerBotaoBack}>
                     <TouchableOpacity 
                         style={[styles.botaoBase, styles.botaoVoltar]}
                         onPress={() => router.push('/')}>

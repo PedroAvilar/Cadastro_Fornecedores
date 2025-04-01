@@ -55,19 +55,19 @@ export default function CadastroScreen() {
                 </TouchableOpacity>
                 <Text style={styles.text}>Nome</Text>
                 <TextInput style={styles.input}
-                    placeholder="João Silva Santos" value={nome} onChangeText={setNome}
+                    placeholder="Pedro Wilson Araújo Avilar" value={nome} onChangeText={setNome}
                 />
                 <Text style={styles.text}>Telefone</Text>
                 <TextInput style={styles.input}
-                    placeholder="(11)93344-2211" value={telefone} onChangeText={setTelefone}
+                    placeholder="(11)94433-2211" value={telefone} onChangeText={setTelefone}
                 />
                 <Text style={styles.text}>Endereço</Text>
                 <TextInput style={styles.input}
-                    placeholder="Rua Braga Filho, 53" value={endereco} onChangeText={setEndereco}
+                    placeholder="Rua Arlindo Braga, 53, Guarulhos - SP" value={endereco} onChangeText={setEndereco}
                 />
                 <Text style={styles.text}>Categoria</Text>
                 <TextInput style={styles.input}
-                    placeholder="Eletrônicos" value={categoria} onChangeText={setCategoria}
+                    placeholder="Eletrodomésticos" value={categoria} onChangeText={setCategoria}
                 />
                 <TouchableOpacity
                     style={[styles.botaoBase, styles.botaoPrimario]}
