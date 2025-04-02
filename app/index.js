@@ -11,8 +11,8 @@ export default function ListagemScreen() {
 
     //Filtra os fornecedores pelo texto digitado pelo usuário
     const fornecedoresFiltrados = fornecedores.filter(fornecedor => (
-        fornecedor.nome.toLocaleLowerCase().includes(filtro.toLocaleLowerCase()) ||
-        fornecedor.telefone.toLocaleLowerCase().includes(filtro.toLocaleLowerCase()) ||
+        fornecedor.nome.toLowerCase().includes(filtro.toLowerCase()) ||
+        fornecedor.telefone.toLowerCase().includes(filtro.toLowerCase()) ||
         fornecedor.endereco.toLowerCase().includes(filtro.toLowerCase()) ||
         fornecedor.categoria.toLowerCase().includes(filtro.toLowerCase())
     ))
