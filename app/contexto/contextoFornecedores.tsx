@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
+//Definição da interface
 interface Fornecedor {
   id: number;
   nome: string;
@@ -9,6 +10,7 @@ interface Fornecedor {
   imagemUri: string;
 }
 
+//Interface para definir o formato do contexto
 interface FornecedoresContextType {
   fornecedores: Fornecedor[];
   adicionarFornecedor: (novoFornecedor: Omit<Fornecedor, 'id'>) => void;
@@ -16,17 +18,22 @@ interface FornecedoresContextType {
   excluirFornecedor: (id: number) => void;
 }
 
+//Criação do contexto com valor inicial
 const FornecedoresContext = createContext<FornecedoresContextType | undefined>(undefined);
 
+
+//Provedor do contexto que gerencia o estado dos fornecedores
 export default function FornecedoresProvider({ children }: { children: React.ReactNode }) {
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>([]);
 
+  //Função para adicionar um novo fornecedor
   const adicionarFornecedor = (novoFornecedor: Omit<Fornecedor, 'id'>) => {
     const novoId = fornecedores.length > 0 ? Math.max(...fornecedores.map(f => f.id)) + 1 : 1;
     const fornecedorComId: Fornecedor = {id: novoId, ...novoFornecedor};
     setFornecedores((prev) => [...prev, fornecedorComId]);
   }
 
+  //Função para editar um fornecedor existente
   const editarFornecedor = (id: number, dadosAtualizados: Omit<Fornecedor, 'id'>) => {
     setFornecedores(prev =>
       prev.map(fornecedor =>
@@ -35,6 +42,7 @@ export default function FornecedoresProvider({ children }: { children: React.Rea
     )
   }
 
+  //Função para excluir um fornecedor
   const excluirFornecedor = (id: number) => {
     setFornecedores(prev =>
       prev.filter(fornecedor => fornecedor.id !== id)
@@ -48,6 +56,7 @@ export default function FornecedoresProvider({ children }: { children: React.Rea
   );
 }
 
+//Hook para acessar o contexto
 export function useFornecedores() {
   const context = useContext(FornecedoresContext);
   if (!context) {

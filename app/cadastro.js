@@ -7,6 +7,7 @@ import { selecionarImagem } from '@/utils/selecaoImagem';
 import { formatarTelefone } from '@/utils/formatarTelefone';
 
 export default function CadastroScreen() {
+    //Estados locais para armazenar os dados do novo fornecedor
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
@@ -16,6 +17,7 @@ export default function CadastroScreen() {
     const {adicionarFornecedor} = useFornecedores();
     const router = useRouter();
 
+    //Função para salvar o novo fornecedor
     const salvarFornecedor = () => {
         if (!nome || !telefone || !endereco || !categoria) {
             return alert('Por favor, preencha todos os campos.');
@@ -36,7 +38,8 @@ export default function CadastroScreen() {
         <ScrollView style={styles.containerScroll}>
             <View style={styles.container}>
 
-                <View style={styles.containerBotaoBack}>
+                {/* Botão para voltar à tela de início */}
+                <View style={styles.containerBotaoVoltar}>
                     <TouchableOpacity 
                         style={[styles.botaoBase, styles.botaoVoltar]}
                         onPress={() => router.push('/')}>
@@ -46,6 +49,7 @@ export default function CadastroScreen() {
 
                 <Text style={styles.title}>Cadastro de fornecedor</Text>
 
+                {/* Área para inserir a imagem do fornecedor */}
                 <Text style={styles.text}>Imagem</Text>
                 {imagemUri ? 
                     <Image source={{uri: imagemUri}} style={styles.fotoPerfil}/> : null}
@@ -54,22 +58,38 @@ export default function CadastroScreen() {
                     onPress={() => selecionarImagem(setImagemUri)}>
                             <Text style={styles.textBotao}>Nova</Text>
                 </TouchableOpacity>
+
+                {/* Campos de entrada do formulário */}
                 <Text style={styles.text}>Nome</Text>
-                <TextInput style={styles.input}
-                    placeholder="Pedro Wilson Araújo Avilar" value={nome} onChangeText={setNome}
+                <TextInput
+                    style={styles.input}
+                    placeholder="Pedro Wilson Araújo Avilar"
+                    value={nome} onChangeText={setNome}
                 />
                 <Text style={styles.text}>Telefone</Text>
-                <TextInput style={styles.input}
-                    placeholder="(11)94433-2211" value={telefone} onChangeText={(texto) => setTelefone(formatarTelefone(texto))} keyboardType="numeric"
+                <TextInput
+                    style={styles.input}
+                    placeholder="(11)94433-2211"
+                    value={telefone}
+                    onChangeText={(texto) => setTelefone(formatarTelefone(texto))}
+                    keyboardType="numeric"
                 />
                 <Text style={styles.text}>Endereço</Text>
-                <TextInput style={styles.input}
-                    placeholder="Rua Arlindo Braga, 53, Guarulhos - SP" value={endereco} onChangeText={setEndereco}
+                <TextInput
+                    style={styles.input}
+                    placeholder="Rua Arlindo Braga, 53, Guarulhos - SP"
+                    value={endereco}
+                    onChangeText={setEndereco}
                 />
                 <Text style={styles.text}>Categoria</Text>
-                <TextInput style={styles.input}
-                    placeholder="Eletrodomésticos" value={categoria} onChangeText={setCategoria}
+                <TextInput
+                    style={styles.input}
+                    placeholder="Eletrodomésticos"
+                    value={categoria}
+                    onChangeText={setCategoria}
                 />
+
+                {/* Botão para cadastrar o fornecedor */}
                 <TouchableOpacity
                     style={[styles.botaoBase, styles.botaoPrimario]}
                     onPress={salvarFornecedor}>

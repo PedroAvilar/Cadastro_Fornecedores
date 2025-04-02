@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 30,
     },
-    containerBotaoBack: {
+    containerBotaoVoltar: {
         alignSelf: 'flex-start',
         marginLeft: 10,
     },
