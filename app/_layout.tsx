@@ -3,7 +3,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
-import FornecedoresProvider from './contexto/contextoFornecedores';
+import FornecedoresProvider from '../contexto/contextoFornecedores';
 import { SafeAreaView } from 'react-native';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

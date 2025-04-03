@@ -1,5 +1,5 @@
 import { View, Text, FlatList, Image, TextInput, Alert, TouchableOpacity, Platform } from "react-native";
-import { useFornecedores } from "./contexto/contextoFornecedores";
+import { useFornecedores } from "../contexto/contextoFornecedores";
 import { styles } from "../styles/styles";
 import { useState } from "react";
 import { useRouter } from "expo-router";
