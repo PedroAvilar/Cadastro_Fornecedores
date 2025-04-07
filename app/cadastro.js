@@ -64,7 +64,8 @@ export default function CadastroScreen() {
                 <TextInput
                     style={styles.input}
                     placeholder="Pedro Wilson Araújo Avilar"
-                    value={nome} onChangeText={setNome}
+                    value={nome} 
+                    onChangeText={setNome}
                 />
                 <Text style={styles.text}>Telefone</Text>
                 <TextInput
