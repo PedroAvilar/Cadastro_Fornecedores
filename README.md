@@ -12,25 +12,25 @@ Página inicial sem fornecedores cadastrados:
 ![Captura de tela.](assets/Capturas%20de%20tela/01%20-%20Página%20inicial%20-%20sem%20fornecedores.jpg)
 
 
-Página inicial com fornecedores cadastrados.
+Página inicial com fornecedores cadastrados:
 ![Captura de tela.](assets/Capturas%20de%20tela/02%20-%20Página%20inicial%20-%20com%20fornecedores.jpg)
 
 
-Página de cadastro sem preenchimento.
+Página de cadastro sem preenchimento:
 ![Captura de tela.](assets/Capturas%20de%20tela/03%20-%20Página%20de%20cadastro%20-%20sem%20preencher.jpg)
 
 
-Página de cadastro com preenchimento.
+Página de cadastro com preenchimento:
 ![Captura de tela.](assets/Capturas%20de%20tela/04%20-%20Página%20de%20cadastro%20-%20preenchida.jpg)
 
 
-Página de editar com alterações feitas.
+Página de editar com alterações feitas:
 ![Captura de tela.](assets/Capturas%20de%20tela/05%20-%20Página%20de%20editar%20-%20com%20alterações.jpg)
 
 
-Página inicial com busca realizada.
+Página inicial com busca realizada:
 ![Captura de tela.](assets/Capturas%20de%20tela/06%20-%20Página%20inicial%20-%20buscar.jpg)
 
 
-Página inicial com confirmação de exclusão.
+Página inicial com confirmação de exclusão:
 ![Captura de tela.](assets/Capturas%20de%20tela/07%20-%20Página%20inicial%20-%20excluir.jpg)
